@@ -67,6 +67,7 @@ module "alb" {
       Environment = "dev"
     }
   }
+}
 
 
 module "blog_sg" {

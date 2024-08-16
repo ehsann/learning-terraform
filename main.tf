@@ -58,19 +58,15 @@ module "alb" {
   security_groups = module.blog_sg.security_group_id
 
   
-  
-  http_tcp_listeners = [
-    {
-      port = 80
+  listeners = {
+    http_tcp_listeners = {
+      port     = 80
       protocol = "HTTP"
-      target_group_index = 0
+      
+    tags = {
+      Environment = "dev"
     }
-  ]
-
-  tags = {
-    Environment = "dev"
   }
-}
 
 
 module "blog_sg" {
